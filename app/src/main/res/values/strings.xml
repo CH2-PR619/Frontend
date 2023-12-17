@@ -7,4 +7,5 @@
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed nibh diam. Fusce imperdiet faucibus augue, quis accumsan enim ornare et. Nam eget gravida dolor, maximus consequat elit. Nulla facilisi. Pellentesque laoreet libero turpis, sit amet convallis ligula iaculis et. Nunc sit amet massa vel urna scelerisque venenatis sit amet sit amet era</string>
     <string name="title_tutorial">How to Use</string>
     <string name="preview_description">Image Preview</string>
+    <string name="title_result">Result</string>
 </resources>
