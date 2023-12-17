@@ -111,7 +111,7 @@ class CameraActivity : AppCompatActivity() {
             } catch (exc: Exception) {
                 Toast.makeText(
                     this@CameraActivity,
-                    "Gagal memunculkan kamera",
+                    "Camera failed to start",
                     Toast.LENGTH_SHORT
                 ).show()
                 Log.e(TAG, "startCamera: ${exc.message}")
@@ -140,7 +140,7 @@ class CameraActivity : AppCompatActivity() {
                 override fun onError(exc: ImageCaptureException) {
                     Toast.makeText(
                         this@CameraActivity,
-                        "Gagal mengambil gambar",
+                        "Failed to capture image",
                         Toast.LENGTH_SHORT
                     ).show()
                     Log.e(TAG, "onError: ${exc.message}")
