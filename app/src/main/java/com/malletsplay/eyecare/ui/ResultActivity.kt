@@ -1,5 +1,6 @@
 package com.malletsplay.eyecare.ui
 
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.malletsplay.eyecare.R
@@ -17,12 +18,18 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         val result = intent.getStringExtra(EXTRA_RESULT).toString()
 
         if (result == "normal") {
             binding.ivResult.setImageResource(R.drawable.result_healthy)
+            binding.tvTitleResult.text = getString(R.string.title_free)
+            binding.tvDescriptionResult.text = getString(R.string.description_free)
         } else {
             binding.ivResult.setImageResource(R.drawable.result_caution)
+            binding.tvTitleResult.text = getString(R.string.title_cataract)
+            binding.tvDescriptionResult.text = getString(R.string.description_cataract)
         }
     }
 }

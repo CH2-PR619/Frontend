@@ -8,4 +8,10 @@
     <string name="title_tutorial">How to Use</string>
     <string name="preview_description">Image Preview</string>
     <string name="title_result">Result</string>
+    <string name="description_about">"Eye Care is an innovative application designed to help people detect the potential risk of cataracts early. This application combines artificial intelligence technology and image analysis to assess the possibility of cataracts based on photos of the user's eyes.</string>
+    <string name="description_tutorial">Select between the option of capturing the image of the eye or picking the image from gallery. When capturing an image with the camera, capture the image close to the eye and center the eye in the image. There will be a preview of the selected/captured image. Decide between choosing another image or submitting the previewed one. The result will be then displayed after submitting an image.</string>
+    <string name="title_free">Cataract-Free</string>
+    <string name="title_cataract">Cataract Detected</string>
+    <string name="description_free">No cataract detected!</string>
+    <string name="description_cataract">Please consult a medical professional immediately</string>
 </resources>

@@ -106,7 +106,7 @@ class PreviewActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     val apiService = ApiConfig.getApiService()
-                    val successResponse = apiService.uploadImage(multipartBody)
+//                    val successResponse = apiService.uploadImage(multipartBody)
                     val resultResponse = apiService.getResult()
                     showLoading(false)
                     moveResult(resultResponse)
@@ -125,6 +125,7 @@ class PreviewActivity : AppCompatActivity() {
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(EXTRA_RESULT, result)
         startActivity(intent)
+        finish()
     }
 
     private fun showLoading(isLoading: Boolean){

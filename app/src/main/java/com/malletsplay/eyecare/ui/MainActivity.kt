@@ -1,6 +1,7 @@
 package com.malletsplay.eyecare.ui
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
@@ -38,8 +39,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         binding.ivHelp.setOnClickListener {
-            Toast.makeText(this, "Help", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, AboutActivity::class.java))
         }
 
