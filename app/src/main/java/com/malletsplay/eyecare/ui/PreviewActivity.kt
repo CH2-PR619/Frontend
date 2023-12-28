@@ -11,10 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
-import com.google.gson.Gson
 import com.malletsplay.eyecare.data.api.ApiConfig
 import com.malletsplay.eyecare.data.response.ResultResponse
-import com.malletsplay.eyecare.data.response.UploadResponse
 import com.malletsplay.eyecare.databinding.ActivityPreviewBinding
 import com.malletsplay.eyecare.ui.ResultActivity.Companion.EXTRA_RESULT
 import com.malletsplay.eyecare.util.reduceFileImage
@@ -99,20 +97,18 @@ class PreviewActivity : AppCompatActivity() {
 
             val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
             val multipartBody = MultipartBody.Part.createFormData(
-                "photo",
+                "images",
                 imageFile.name,
                 requestImageFile
             )
             lifecycleScope.launch {
                 try {
                     val apiService = ApiConfig.getApiService()
-//                    val successResponse = apiService.uploadImage(multipartBody)
+                    val successResponse = apiService.uploadImage(multipartBody)
                     val resultResponse = apiService.getResult()
                     showLoading(false)
                     moveResult(resultResponse)
                 } catch (e: HttpException) {
-//                    val errorBody = e.response()?.errorBody()?.string()
-//                    val errorResponse = Gson().fromJson(errorBody, UploadResponse::class.java)
                     Toast.makeText(this@PreviewActivity, e.message, Toast.LENGTH_SHORT).show()
                     showLoading(false)
                 }
